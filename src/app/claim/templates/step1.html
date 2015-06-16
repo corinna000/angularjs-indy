@@ -1,0 +1,30 @@
+  <fieldset>
+    <legend>Step 1: Personal Information</legend>
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input class="form-control" id="fullName" name="fullName" ng-model="vm.model.fullName">
+    </div>
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" class="form-control" id="email" name="email" required
+             ng-model="vm.model.email">
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input class="form-control" id="city" name="city" required
+             ng-model="vm.model.city">
+    </div>
+    <div class="form-group">
+      <label for="state">State</label>
+      <select id="state" name="state" class="form-control"
+              ng-options="state.abbreviation as state.name for state in vm.states"
+              ng-model="vm.model.state">
+        <option value="">-- State --</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="postalCode">Postal Code</label>
+      <input class="form-control" id="postalCode" name="postalCode" required
+             ng-model="vm.model.postalCode">
+    </div>
+  </fieldset>

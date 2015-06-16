@@ -1,0 +1,14 @@
+<div>
+  <h1>New Warranty Claim</h1>
+  <form name="vm.claimForm" novalidate>
+    <div ng-show="vm.step == 1" ng-include="'app/claim/templates/step1.html'"></div>
+    <div ng-show="vm.step == 2" ng-include="'app/claim/templates/step2.html'"></div>
+    <div ng-show="vm.step == 3" ng-include="'app/claim/templates/step3.html'"></div>
+    <button class="btn btn-default" ng-show="vm.step > 1" ng-click="vm.previousStep()">Previous Step</button>
+    <button class="btn btn-default" ng-show="vm.step < 3" ng-click="vm.nextStep()">Next Step</button>
+    <button class="btn btn-default"
+            disabled="$vm.claimForm.$invalid"
+            ng-show="vm.step == 3"
+            ng-click="vm.claimForm.$valid && vm.submitClaim()">Submit Claim</button>
+  </form>
+</div>
