@@ -64,14 +64,14 @@
       reverseStep();
     }
 
-    function saveClaim() {
-      claimInProgress.saveClaim(vm.model);
-    }
-
     function submitClaim() {
       claim.submit(vm.model).then(function (data) {
         vm.model = data.claim;
       });
+    }
+
+    function saveClaim() {
+      claimInProgress.saveClaim(vm.model);
     }
 
     function advanceStep() {
